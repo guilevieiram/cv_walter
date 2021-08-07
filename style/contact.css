@@ -1,0 +1,27 @@
+.contact-title h1, h4{
+    margin: 3rem auto;
+    /* font-weight: normal; */
+}
+.contact-info {
+    width: 80%;
+    max-width: 20rem;
+    display: grid;
+    grid-template-columns: 5rem auto;
+    margin: 2rem auto;
+    text-align: left;
+    align-items: center;
+   
+}
+.contact-info img {
+    margin-right: 5rem;
+    height: 3vh
+}
+.contact-info a {
+    word-wrap: break-word;
+    color: black;
+}
+.contact-info a:hover {
+    transition: .4s;
+    transform: scale(1.2, 1.2);
+    color:rgb(104, 78, 255);
+}
