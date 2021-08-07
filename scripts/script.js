@@ -6,7 +6,6 @@ importElement('header', 'components/nav-bar.html');
 
 
 function load(element) {
-    console.log('loaded', element);
     gsap.fromTo(
         element,
         {
@@ -29,7 +28,6 @@ function loadOnReach (element) {
         opacity: 0,
     });
     window.addEventListener('scroll', () => {
-        console.log(window.scrollY, target.offsetTop)
         if (window.scrollY + window.innerHeight > target.offsetTop && elementNotCalled){
           elementNotCalled = false;
           load(element)
@@ -74,19 +72,5 @@ gsap.from(".info",{
     duration: 2,
     y: 50,
     opacity: 0.5,
-    ease: 'power1'
-});
-
-gsap.from(".contact-title",{
-    duration: 2,
-    y: 50,
-    opacity: 0.5,
-    ease: 'power1'
-});
-
-gsap.from(".contact-info",{
-    duration: 1,
-    y:200,
-    opacity: 0,
     ease: 'power1'
 });

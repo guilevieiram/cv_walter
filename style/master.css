@@ -22,7 +22,7 @@ header {
 main {
     width: 90%;
     max-width: 50rem;
-    min-height: 80vh;
+    min-height: 100vh;
     padding-top: 5vh;
     margin: 5vh auto 5vh auto;
     text-align: center;
@@ -89,7 +89,7 @@ nav {
 .nav-link:hover, .logo a:hover, .logo img:hover  {
     transition: .4s;
     transform: scale(1.2, 1.2);
-    color:rgb(104, 78, 255);
+    color:rgb(96, 139, 204);
 }
 /* snapping effect */
 /* .scroll-snap-container {
@@ -218,6 +218,9 @@ footer {
 }
 .social-media a {
     margin: 1rem;
+}
+.social-media a img {
+    height: 2rem;
 }
 .signature {
     margin: auto;
