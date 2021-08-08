@@ -4,8 +4,32 @@ function importElement(elementId, elementSourceHTML){
 importElement('footer', 'components/footer.html');
 importElement('header', 'components/nav-bar.html');
 
+function contact() {
+    let scrollDiv = document.getElementById("contact").offsetTop;
+    let navBarHeight = document.getElementById("header").offsetHeight
+    window.scrollTo({ top: scrollDiv - 2 * navBarHeight - 20, behavior: 'smooth'});
+}
 
-function load(element) {
+function exportPDF() {
+    load('#professional', time = 0)
+    load('#qualifications', time = 0)
+    load('#academical', time = 0)
+    load('#contact', time = 0)
+    load('#objectives', time = 0)
+  
+    let element = document.getElementById('print');
+    var opt = {
+        filename: 'cv-WalterDecatManhaes.pdf',
+        enableLinks: true,
+        pagebreak:    {
+            mode: ['avoid-all', 'legacy'],
+            // after: ['.info-container', '#contact', '#academical', '#qualifications'],
+        }
+    };
+    html2pdf().set(opt).from(element).save();
+}
+
+function load(element, time = 1.5) {
     gsap.fromTo(
         element,
         {
@@ -13,13 +37,14 @@ function load(element) {
             y: 100
         },
         {
-            duration: 1.5,
+            duration: time,
             opacity: 1,
             y: 0,
             ease: 'power1'
         }
     )
 };
+
 
 function loadOnReach (element) {
     let target = document.querySelector(element);
@@ -39,6 +64,9 @@ function loadOnReach (element) {
 loadOnReach('#professional')
 loadOnReach('#qualifications')
 loadOnReach('#academical')
+loadOnReach('#contact')
+loadOnReach('#objectives')
+
 
 gsap.from("header", {
     duration: 1.5, 
@@ -55,15 +83,21 @@ gsap.from(".profile img",{
 });
 
 gsap.from(".profile-info h1",{
-    duration: 1,
+    duration: 1.5,
     y: -50,
     opacity: 0,
     ease: 'power1'
 });
 
 gsap.from(".profile-info p",{
-    duration: 1.5,
-    y: 100,
+    duration: 1,
+    opacity: 0,
+    y: -50,
+    ease: 'power1'
+});
+
+gsap.from(".profile-info button",{
+    duration: 1,
     opacity: 0,
     ease: 'power1'
 });
@@ -74,3 +108,4 @@ gsap.from(".info",{
     opacity: 0.5,
     ease: 'power1'
 });
+

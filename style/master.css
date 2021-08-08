@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    font-size: 1.4vw;
 }
 
 body {
@@ -32,26 +33,51 @@ main {
 hr{
     border-color: var(--color-highlight);
     border-style: none;
-    border-top-style: dotted;
-    border-top-width: 5px;
-    width: 10%;
+    border-top-style: solid;
+    border-top-width: 2px;
+    width: 35%;
     margin: 2rem auto 4rem auto;
 }
 
 h1, h2, h3 {
     color:rgb(96, 139, 204);
+    font-family: 'Raleway', sans-serif;
+    font-weight: medium;
+    font-size: 1.7rem;
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 a:active{
     transform: scale(0.9, 0.9);
 }
 
+button {
+    font-family: 'Raleway', sans-serif;
+    border-radius: 0.6rem;
+    border: none;
+    width: 15rem;
+    height: 2rem;
+    margin: 2rem auto 0 auto;
+    color: white;
+    background-color: rgb(13, 104, 240);
+    background: linear-gradient(to left top,rgb(3, 93, 228),rgb(123, 115, 240));
+    transition: 300ms;
+}
+
+button:hover {
+    transform: scale(1.01, 1.01);
+    background: linear-gradient(to left top,rgb(27, 118, 255),rgb(156, 149, 255));
+}
+
+button:active {
+    transform: scale(0.995, 0.995);
+}
 /* navbar */
 nav {
+    font-family: 'Raleway', sans-serif;
     width: 95%;
     margin: auto;
     display: flex;
@@ -85,22 +111,14 @@ nav {
 .nav-link {
     text-decoration: none;
     color: white;
+    text-align: center;
+    margin: 0 1rem;
 }
 .nav-link:hover, .logo a:hover, .logo img:hover  {
     transition: .4s;
     transform: scale(1.2, 1.2);
     color:rgb(96, 139, 204);
 }
-/* snapping effect */
-/* .scroll-snap-container {
-    scroll-snap-type: y proximity;
-    overflow-y: scroll;
-    scroll-padding: 15vh 0 0 0;
-    height: 100vh;
-}
-section {
-    scroll-snap-align: start;
-} */
 
 /* profile */
 .profile {
@@ -117,7 +135,7 @@ section {
     margin: auto;
 }
 .profile-info h1 {
-    margin: 2rem 0
+    margin: 1rem 0
 }
 
 /* main info  */
@@ -125,7 +143,7 @@ section {
     display: flex;
     justify-content: space-around;
     align-items: top;
-    margin: 10vh 0;
+    margin: 5vh 0 15vh 0;
 }
 .info {
     width: 70%;
@@ -139,6 +157,40 @@ section {
     height: 10vh;
     margin: 3vh auto;
 }
+/* objectives */
+.objectives {
+    text-align: justify;
+    max-width: 40rem;
+    margin: 5vh auto 10vh auto;
+
+}
+/* contacts */
+.contact {
+    margin: 5vh auto 10vh auto;
+}
+.contact-info {
+    width: 80%;
+    max-width: 20rem;
+    display: grid;
+    grid-template-columns: 5rem auto;
+    margin: 2rem auto;
+    text-align: left;
+    align-items: center;
+   
+}
+.contact-info img {
+    margin-right: 5rem;
+    height: 5vh
+}
+.contact-info a {
+    word-wrap: break-word;
+    color: black;
+}
+.contact-info a:hover {
+    transition: .4s;
+    transform: scale(1.2, 1.2);
+    color:rgb(104, 78, 255);
+}
 
 /* qualificações */
 .qualifications {
@@ -148,7 +200,8 @@ section {
 .qualification {
     display: grid;
     margin: 6vh 0;
-    grid-template-columns: 5rem auto;
+    grid-template-columns: auto auto;
+    column-gap: 3vw;
     justify-items: start;
     align-items: center;
     text-align: justify;
@@ -220,7 +273,7 @@ footer {
     margin: 1rem;
 }
 .social-media a img {
-    height: 2rem;
+    height: 1.5rem;
 }
 .signature {
     margin: auto;
@@ -229,7 +282,7 @@ footer {
 }
 
 /* mobile friendly */
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 800px) {
     /* elements */
     * {
         font-size: 0.9rem;
@@ -257,8 +310,12 @@ footer {
         flex: 2;
     }
     /* intro */
+    .profile {
+        grid-template-columns: auto;
+    }
     .profile img {
         height: 15vh;
+        margin: auto;
     }
     /* info */
     .info-container {
