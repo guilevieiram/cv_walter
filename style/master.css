@@ -180,7 +180,7 @@ nav {
 }
 .contact-info img {
     margin-right: 5rem;
-    height: 5vh
+    width: 1.5rem;
 }
 .contact-info a {
     word-wrap: break-word;
